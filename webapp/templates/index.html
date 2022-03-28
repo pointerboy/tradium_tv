@@ -68,9 +68,9 @@
 		</script>
 
 		<script>
-			// TV Info Script 
-			var moment = require('moment'); 
+			moment.locale('de');
 
+			// TV Info Script 
 			startTimeTimeout();
 
 			function startTimeTimeout(){
@@ -80,10 +80,9 @@
 			}
 
 			function updateTime(){
-				var date = moment().format('MMMM Do YYYY, h:mm:ss a').toString();
+				var date = moment().format('MMMM Do YYYY // h:mm a').toString();
 
 				document.getElementById('time').innerHTML = date;
-				console.log(date);
 				startTimeTimeout();
 			}
 			
