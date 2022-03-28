@@ -1,1 +1,95 @@
-test
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Tradium TV</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" {{ url_for('static', filename='dist/reset.css') }}>
+		<link rel="stylesheet" {{ url_for('static', filename='dist/reveal.css') }}>
+		<link rel="stylesheet" {{ url_for('static', filename='dist/simple.css') }} id="theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="https://tradium.dk/media/2420/logo_tradium_multifarve.png" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; backgrou:%w !pbcopynd: transparent;" class="demo-logo">
+				</section>
+
+				<section>
+					<h2>Info</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare molestie eleifend. Maecenas non pulvinar lectus, at vehicula elit.
+					</p>
+				</section>
+
+				<section>
+					<h2>Menu</h2>
+					<p>
+						Burgir
+					</p>
+				</section>
+			</div>
+
+			<section class="full">
+				<p id="time" class="time">LOADING TIME</p>
+			</section>
+		</div>
+		
+
+		<script type="text/javascript" src={{ url_for('static', filename='dist/reveal.js') }}></script>
+
+
+		<style>
+			.time{
+				font-size: 24px;
+				bottom:0px;
+				right:15px;
+				position:absolute;
+			}
+
+		</style>
+		<script>
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				center: true,
+				hash: true,
+				autoSlide: 4000,
+				loop: true,
+				height:"100%",
+             			width:"100%"
+			});
+		</script>
+
+		<script>
+			// TV Info Script 
+
+			startTimeTimeout();
+
+			function startTimeTimeout(){
+				var refresh_rate = 1000;
+
+				setTimeout('updateTime()', refresh_rate);
+			}
+
+			function updateTime(){
+				var date = new Date();
+				var formattedDate = date.getHours() + ":" + date.getMinutes() + " //" +
+				date.getDate();
+
+				document.getElementById('time').innerHTML = formattedDate;
+
+				console.log(date);
+				startTimeTimeout();
+			}
+			
+		</script>
+	</body>
+</html>
+
