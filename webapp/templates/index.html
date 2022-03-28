@@ -37,13 +37,13 @@
 			</div>
 
 			<section class="full">
-				<p id="time" class="time">LOADING TIME</p>
+				<p id="time" class="time"></p>
 			</section>
 		</div>
 		
 
 		<script type="text/javascript" src={{ url_for('static', filename='dist/reveal.js') }}></script>
-
+		<script type="text/javascript" src={{ url_for('static', filename='plugin/moment.js') }}></script>
 
 		<style>
 			.time{
@@ -69,6 +69,7 @@
 
 		<script>
 			// TV Info Script 
+			var moment = require('moment'); 
 
 			startTimeTimeout();
 
@@ -79,12 +80,9 @@
 			}
 
 			function updateTime(){
-				var date = new Date();
-				var formattedDate = date.getHours() + ":" + date.getMinutes() + " //" +
-				date.getDate();
+				var date = moment().format('MMMM Do YYYY, h:mm:ss a').toString();
 
-				document.getElementById('time').innerHTML = formattedDate;
-
+				document.getElementById('time').innerHTML = date;
 				console.log(date);
 				startTimeTimeout();
 			}
