@@ -27,13 +27,16 @@
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare molestie eleifend. Maecenas non pulvinar lectus, at vehicula elit.
 					</p>
 				</section>
-
+				
+				{% for notification in notifications %}
 				<section>
-					<h2>Menu</h2>
+					<h2>{{notification.title}}</h2>
 					<p>
-						Lorem ipsum dolor sit amet.
+						{{notification.description}}
 					</p>
 				</section>
+
+				{%endfor%}
 			</div>
 
 			<section class="full">
@@ -49,7 +52,7 @@
 			.time{
 				font-size: 46px;
 				bottom:25px;
-				right:40px;
+				right:65px;
 				position:absolute;
 			}
 
