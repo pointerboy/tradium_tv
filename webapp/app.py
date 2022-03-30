@@ -28,7 +28,7 @@ class Role(db.Model, RoleMixin):
         return self.name
 
 
-class Notification(db.Model):
+class Slide(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(32))
     description = db.Column(db.String(255))
@@ -75,8 +75,8 @@ class MyModelView(sqla.ModelView):
 
 @app.route('/')
 def index():
-    notifications = Notification.query.all()
-    return render_template('index.html', notifications=notifications)
+    slides = Slide.query.all()
+    return render_template('index.html', slides=slides)
 
 admin = flask_admin.Admin(
     app,
@@ -88,7 +88,7 @@ admin = flask_admin.Admin(
 # Add model views
 admin.add_view(MyModelView(Role, db.session))
 admin.add_view(MyModelView(User, db.session))
-admin.add_view(MyModelView(Notification, db.session))
+admin.add_view(MyModelView(Slide, db.session))
 
 # define a context processor for merging flask-admin's template context into the
 # flask-security views.

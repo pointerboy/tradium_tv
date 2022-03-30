@@ -28,15 +28,15 @@
 					</p>
 				</section>
 				
-				{% for notification in notifications %}
+				{% for slide in slides %}
 				<section
-					{% if notification.bgcolor is defined %}
-					data-background-color = '{{notification.bgcolor}}'
+					{% if slide.bgcolor is defined %}
+					data-background-color = '{{slide.bgcolor}}'
 					{%endif%}
 				>
-					<h2>{{notification.title}}</h2>
+					<h2>{{slide.title}}</h2>
 					<p>
-						{{notification.description}}
+						{{slide.description}}
 					</p>
 				</section>
 
