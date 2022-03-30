@@ -29,7 +29,11 @@
 				</section>
 				
 				{% for notification in notifications %}
-				<section>
+				<section
+					{% if notification.bgcolor is defined %}
+					data-background-color = '{{notification.bgcolor}}'
+					{%endif%}
+				>
 					<h2>{{notification.title}}</h2>
 					<p>
 						{{notification.description}}

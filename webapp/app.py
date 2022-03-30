@@ -8,11 +8,9 @@ import flask_admin
 from flask_admin.contrib import sqla
 from flask_admin import helpers as admin_helpers
 
-
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 db = SQLAlchemy(app)
-
 
 roles_users = db.Table(
     'roles_users',
@@ -34,6 +32,7 @@ class Notification(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(32))
     description = db.Column(db.String(255))
+    bgcolor = db.Column(db.String(32))
 
     def __str__(self):
         return self.title
