@@ -27,7 +27,6 @@ class Role(db.Model, RoleMixin):
     def __str__(self):
         return self.name
 
-
 class Slide(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(32))

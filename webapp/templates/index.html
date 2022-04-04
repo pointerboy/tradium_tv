@@ -11,10 +11,8 @@
 		<link rel="stylesheet" href={{ url_for('static', filename='dist/reset.css') }}>
 		<link rel="stylesheet" href={{ url_for('static', filename='dist/reveal.css') }}>
 		<link rel="stylesheet" href={{ url_for('static', filename='dist/simple.css') }} id="theme">
-		<link rel="stylesheet" href={{ url_for('static', filename='css/custom_reveal.css')}}>
-		<style>
-			.playback { display: none; }
-		</style>		
+		<link rel="stylesheet" href={{ url_for('static', filename='css/style.css')}}>
+
 	</head>
 
 	<body>
@@ -48,20 +46,9 @@
 				<p id="time" class="time"></p>
 			</section>
 		</div>
-		
 
 		<script type="text/javascript" src={{ url_for('static', filename='dist/reveal.js') }}></script>
 		<script type="text/javascript" src={{ url_for('static', filename='plugin/moment.js') }}></script>
-
-		<style>
-			.time{
-				font-size: 46px;
-				bottom:25px;
-				right:65px;
-				position:absolute;
-			}
-
-		</style>
 
 		<script>
 			Reveal.initialize({
@@ -72,7 +59,7 @@
 				autoSlide: 4000,
 				loop: true,
 				height:"100%",
-             			width:"100%"
+             	width:"100%"
 			});
 		</script>
 

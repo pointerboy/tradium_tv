@@ -1,0 +1,8 @@
+.playback { display: none; } /* removes the play button */
+
+.time{
+    font-size: 46px;
+    bottom:25px;
+    right:65px;
+    position:absolute;
+}
