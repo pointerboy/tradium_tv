@@ -11,6 +11,10 @@
 		<link rel="stylesheet" href={{ url_for('static', filename='dist/reset.css') }}>
 		<link rel="stylesheet" href={{ url_for('static', filename='dist/reveal.css') }}>
 		<link rel="stylesheet" href={{ url_for('static', filename='dist/simple.css') }} id="theme">
+		<link rel="stylesheet" href={{ url_for('static', filename='css/custom_reveal.css')}}>
+		<style>
+			.playback { display: none; }
+		</style>		
 	</head>
 
 	<body>
@@ -22,10 +26,7 @@
 				</section>
 
 				<section>
-					<h2>Info</h2>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare molestie eleifend. Maecenas non pulvinar lectus, at vehicula elit.
-					</p>
+					<p>Made by students from Montenegro with ❤️</p>
 				</section>
 				
 				{% for slide in slides %}
