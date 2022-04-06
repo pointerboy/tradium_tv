@@ -1,5 +1,13 @@
-import webview
+ximport webview
 import time
+
+web_address = 'http://127.0.01:5000'
+
+def refresh_webview():
+    while True:
+        time.sleep(5)
+        window.load_url(web_address)        
+
 
 def toggle_fullscreen(window):
     time.sleep(1.0)
@@ -8,5 +16,5 @@ def toggle_fullscreen(window):
 
 
 if __name__ == '__main__':
-    window = webview.create_window('Tradium TV', 'http://127.0.01:5000')
+    window = webview.create_window('Tradium TV', web_address)
     webview.start(toggle_fullscreen, window)
