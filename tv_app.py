@@ -1,11 +1,11 @@
-ximport webview
+import webview
 import time
 
 web_address = 'http://127.0.01:5000'
 
 def refresh_webview():
     while True:
-        time.sleep(5)
+        time.sleep(180)
         window.load_url(web_address)        
 
 
