@@ -104,4 +104,4 @@ def security_context_processor():
 if __name__ == '__main__':
     app_dir = os.path.realpath(os.path.dirname(__file__))
 
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
